@@ -1,20 +1,22 @@
-/* global describe, it, expect, beforeEach */
-import React from 'react'
+/* global describe, it, ,sinon, expect, beforeEach, mount, shallow */
+
 import SearchBox from './SearchBox'
-import { shallow, mount } from 'enzyme'
 
 describe('<SearchBox />', () => {
   let wrapper
+  let nameSpy
   beforeEach(() => {
+    nameSpy = sinon.spy()
     wrapper = mount(
       <SearchBox
         company='New Relic'
         name='Fred'
-        sortBy='last_name_ascn' />)
+        sortBy='last_name_ascn'
+        handleUpdateName={nameSpy} />)
   })
 
   it('renders without crashing', () => {
-    shallow(<SearchBox />)
+    expect(wrapper).toMatchSnapshot()
   })
 
   it('has param props', () => {
@@ -35,6 +37,11 @@ describe('<SearchBox />', () => {
 
     it('has the name param as input value', () => {
       expect(nameInput.get(0).props.defaultValue).toEqual('Fred')
+    })
+
+    it('updates the name field onChange', () => {
+      nameInput.simulate('change', {target: {value: 'Fredi'}})
+      expect(nameSpy.calledOnce).toBe(true)
     })
   })
 })

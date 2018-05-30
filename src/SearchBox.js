@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './SearchBox.css'
 
 class SearchBox extends Component {
@@ -9,6 +10,13 @@ class SearchBox extends Component {
       </div>
     )
   }
+}
+
+SearchBox.propTypes = {
+  name: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  sortBy: PropTypes.string.isRequired,
+  handleUpdateName: PropTypes.func.isRequired
 }
 
 export default SearchBox

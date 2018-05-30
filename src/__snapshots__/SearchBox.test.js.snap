@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBox /> renders without crashing 1`] = `
+<div
+  className="SearchBox"
+>
+  <input
+    defaultValue="Fred"
+    id="name-input"
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;

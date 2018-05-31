@@ -24,13 +24,13 @@ class App extends Component {
         {value: 'company_name_desc', label: 'Company  ⇩'}]
     }
 
+    this.buildCompanyOptions = this.buildCompanyOptions.bind(this)
+    this.fetchCustomerList = this.fetchCustomerList.bind(this)
+    this.findSortByObject = this.findSortByObject.bind(this)
     this.handleUpdateName = this.handleUpdateName.bind(this)
     this.handleUpdateCompany = this.handleUpdateCompany.bind(this)
     this.handleUpdateSortBy = this.handleUpdateSortBy.bind(this)
-    this.findSortByObject = this.findSortByObject.bind(this)
-    this.fetchCustomerList = this.fetchCustomerList.bind(this)
     this.setStateFromURL = this.setStateFromURL.bind(this)
-    this.buildCompanyOptions = this.buildCompanyOptions.bind(this)
   }
 
   buildCompanyOptions (companies) {
@@ -43,6 +43,52 @@ class App extends Component {
 
   async componentDidMount () {
     await this.setStateFromURL()
+    this.fetchCustomerList()
+  }
+
+  async fetchCustomerList () {
+    const json = await fetchHelper(this.state)
+    this.setState({
+      companyOptions: this.buildCompanyOptions(json.companies),
+      customers: json.customers,
+      sortBy: this.findSortByObject(json.params.sortBy),
+      customerName: json.params.name,
+      companyName: {value: json.params.company, label: json.params.company}
+    })
+  }
+
+  findCompanyNameObject (name) {
+    if (name === '' || name === undefined) { return this.state.companyName }
+    let result = this.state.companyOptions.find((el) => el.value === name)
+    return result ? result : {value: name, label: name}
+  }
+
+  findSortByObject (sortParam) {
+    // NOTE: I wrote these find function intentionaly non consistent to demonstrate flexibility.
+    // NOTE: I like to include a basic catch ahead of iteration when I can.
+    if (sortParam === undefined) { return this.state.sortBy }
+    let result
+    // LOOP through sortOptions - set result when obj matches input
+    this.state.sortByOptions.map((option) => {
+      if (option.value === sortParam) { result = option }
+      return option
+    })
+    // IF no option is found return the existing state.
+    return result ? result : this.state.sortBy
+  }
+
+  async handleUpdateCompany (e) {
+    await this.setState({companyName: e})
+    this.fetchCustomerList()
+  }
+
+  async handleUpdateName (e) {
+    await this.setState({customerName: e.target.value})
+    this.fetchCustomerList()
+  }
+
+  async handleUpdateSortBy (e) {
+    await this.setState({sortBy: e})
     this.fetchCustomerList()
   }
 
@@ -60,52 +106,6 @@ class App extends Component {
     customerName = queryString.name || ''
     sortBy = this.findSortByObject(queryString.sort_by)
     return this.setState({companyName, customerName, sortBy})
-  }
-
-  async fetchCustomerList () {
-    const json = await fetchHelper(this.state)
-    this.setState({
-      companyOptions: this.buildCompanyOptions(json.companies),
-      customers: json.customers,
-      sortBy: this.findSortByObject(json.params.sortBy),
-      customerName: json.params.name,
-      companyName: {value: json.params.company, label: json.params.company}
-    })
-  }
-
-  findSortByObject (sortParam) {
-    // NOTE: I wrote these find function intentionaly non consistent to demonstrate flexibility.
-    // NOTE: I like to include a basic catch ahead of iteration when I can.
-    if (sortParam === undefined) { return this.state.sortBy }
-    let result
-    // LOOP through sortOptions - set result when obj matches input
-    this.state.sortByOptions.map((option) => {
-      if (option.value === sortParam) { result = option }
-      return option
-    })
-    // IF no option is found return the existing state.
-    return result ? result : this.state.sortBy
-  }
-
-  findCompanyNameObject (name) {
-    if (name === '' || name === undefined) { return this.state.companyName }
-    let result = this.state.companyOptions.find((el) => el.value === name)
-    return result ? result : {value: name, label: name}
-  }
-
-  async handleUpdateName (e) {
-    await this.setState({customerName: e.target.value})
-    this.fetchCustomerList()
-  }
-
-  async handleUpdateCompany (e) {
-    await this.setState({companyName: e})
-    this.fetchCustomerList()
-  }
-
-  async handleUpdateSortBy (e) {
-    await this.setState({sortBy: e})
-    this.fetchCustomerList()
   }
 
   render () {

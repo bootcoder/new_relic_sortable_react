@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CustomerList /> renders without crashing 1`] = `
+<div
+  className="CustomerList"
+>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          ID
+        </td>
+        <td>
+          First Name
+        </td>
+        <td>
+          Last Name
+        </td>
+        <td>
+          Company
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tbody />
+  </table>
+</div>
+`;

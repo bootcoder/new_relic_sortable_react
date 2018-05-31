@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import SearchBox from './SearchBox'
+import CustomerList from './CustomerList'
 import fetchHelper from './request'
 import './App.css'
 
@@ -89,6 +90,7 @@ class App extends Component {
           handleUpdateName={this.handleUpdateName}
           handleUpdateCompany={this.handleUpdateCompany}
           handleUpdateSortBy={this.handleUpdateSortBy} />
+        <CustomerList customers={this.state.customers} />
       </div>
     )
   }

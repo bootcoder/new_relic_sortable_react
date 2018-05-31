@@ -15,7 +15,7 @@ describe('<SearchBox />', () => {
       <SearchBox
         companyName={{value: 'New Relic', label: 'New Relic'}}
         customerName='Fred'
-        companies={['Titos', 'Wendys']}
+        companyOptions={[{value: 'Titos', label: 'Titos'}, {value: 'Titos', label: 'Titos'}]}
         sortBy={{value: 'first_name_ascn', label: 'First Name ⇧'}}
         sortByOptions={[{value: 'first_name_ascn', label: 'First Name ⇧'}]}
         handleUpdateName={nameSpy}
@@ -44,7 +44,7 @@ describe('<SearchBox />', () => {
     })
 
     it('has the name param as input value', () => {
-      expect(nameInput.get(0).props.defaultValue).toEqual('Fred')
+      expect(nameInput.get(0).props.value).toEqual('Fred')
     })
 
     it('updates the name field onChange', () => {

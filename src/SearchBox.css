@@ -1,7 +1,21 @@
+.SearchBox {
+  
+}
+
+.info-box {
+  background-color: #5cb85c;
+}
+
 .select-margin-top {
   margin-top: 7px;
 }
 
 .margin-5p {
   margin: 5px 0;
+}
+
+@media (min-width: 1200px) {
+    .pull-right-lg {
+        float: right;
+    }
 }

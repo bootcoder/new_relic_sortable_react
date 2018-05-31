@@ -6,41 +6,25 @@ import 'react-select/dist/react-select.css'
 import './SearchBox.css'
 
 class SearchBox extends Component {
-  constructor () {
-    super()
-    this.buildCompanyOptions = this.buildCompanyOptions.bind(this)
-  }
-
-  buildCompanyOptions () {
-    let options = [{ value: 'all', label: 'All Companies' }]
-    this.props.companies.map((comp) => {
-      options.push({value: comp, label: comp})
-      return comp
-    })
-    return options
-  }
-
   render () {
-    const options = this.buildCompanyOptions()
-
     return (
-      <div className='SearchBox'>
+      <div className='SearchBox well'>
         <div className='form-group'>
-          <h4>Search Options</h4>
+          <h4>Filter Options</h4>
           <div className='row margin-5p'>
-            <p className='form-control'>Filter by Name</p>
+            <p className='form-control info-box'>Input Name / Dropdown Sorting</p>
             <input
               id='name-input'
               type='text'
               className='form-control'
-              defaultValue={this.props.customerName}
+              value={this.props.customerName}
               onChange={this.props.handleUpdateName} />
           </div>
           <div className='row margin-5p'>
             <Select
               inputProps={{id: 'company-dropdown'}}
               className='select-margin-top'
-              options={options}
+              options={this.props.companyOptions}
               onChange={this.props.handleUpdateCompany}
               value={this.props.companyName} />
             <Select
@@ -59,7 +43,7 @@ class SearchBox extends Component {
 SearchBox.propTypes = {
   customerName: PropTypes.string.isRequired,
   companyName: PropTypes.object.isRequired,
-  companies: PropTypes.array.isRequired,
+  companyOptions: PropTypes.array.isRequired,
   sortBy: PropTypes.object.isRequired,
   sortByOptions: PropTypes.array.isRequired,
   handleUpdateName: PropTypes.func.isRequired,

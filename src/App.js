@@ -9,16 +9,27 @@ class App extends Component {
 
     this.state = {
       customers: [],
-      name: '',
-      company: 'All',
-      sortBy: 'last_name_ascn'
+      customerName: '',
+      companyName: {value: 'All', label: 'All Companies'},
+      companies: ['test'],
+      sortBy: {value: 'last_name_desc', label: 'Last Name ⇩'}
     }
 
     this.handleUpdateName = this.handleUpdateName.bind(this)
+    this.handleUpdateCompany = this.handleUpdateCompany.bind(this)
+    this.handleUpdateSortBy = this.handleUpdateSortBy.bind(this)
   }
 
   handleUpdateName (e) {
-    this.setState({name: e.target.value})
+    this.setState({customerName: e.target.value})
+  }
+
+  handleUpdateCompany (e) {
+    this.setState({companyName: e})
+  }
+
+  handleUpdateSortBy (e) {
+    this.setState({sortBy: e})
   }
 
   render () {
@@ -29,10 +40,13 @@ class App extends Component {
           <h1 className='App-title'>Welcome to React</h1>
         </header>
         <SearchBox
-          name={this.state.name}
-          company={this.state.company}
+          customerName={this.state.customerName}
+          companyName={this.state.companyName}
+          companies={this.state.companies}
           sortBy={this.state.sortBy}
-          handleUpdateName={this.handleUpdateName} />
+          handleUpdateName={this.handleUpdateName}
+          handleUpdateCompany={this.handleUpdateCompany}
+          handleUpdateSortBy={this.handleUpdateSortBy} />
       </div>
     )
   }

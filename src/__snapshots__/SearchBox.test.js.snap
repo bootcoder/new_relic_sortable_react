@@ -10,5 +10,201 @@ exports[`<SearchBox /> renders without crashing 1`] = `
     onChange={[Function]}
     type="text"
   />
+  <div
+    className="Select has-value is-clearable is-searchable Select--single"
+  >
+    <div
+      className="Select-control"
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+    >
+      <span
+        className="Select-multi-value-wrapper"
+        id="react-select-2--value"
+      >
+        <div
+          className="Select-value"
+        >
+          <span
+            aria-selected="true"
+            className="Select-value-label"
+            id="react-select-2--value-item"
+            role="option"
+          >
+            New Relic
+          </span>
+        </div>
+        <div
+          className="Select-input"
+          style={
+            Object {
+              "display": "inline-block",
+            }
+          }
+        >
+          <input
+            aria-activedescendant="react-select-2--value"
+            aria-expanded="false"
+            aria-haspopup="false"
+            aria-owns=""
+            id="company-dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            role="combobox"
+            style={
+              Object {
+                "boxSizing": "content-box",
+                "width": "5px",
+              }
+            }
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "scroll",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          />
+        </div>
+      </span>
+      <span
+        aria-label="Clear value"
+        className="Select-clear-zone"
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        title="Clear value"
+      >
+        <span
+          className="Select-clear"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&times;",
+            }
+          }
+        />
+      </span>
+      <span
+        className="Select-arrow-zone"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="Select-arrow"
+          onMouseDown={[Function]}
+        />
+      </span>
+    </div>
+  </div>
+  <div
+    className="Select has-value is-clearable is-searchable Select--single"
+  >
+    <div
+      className="Select-control"
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+    >
+      <span
+        className="Select-multi-value-wrapper"
+        id="react-select-3--value"
+      >
+        <div
+          className="Select-value"
+        >
+          <span
+            aria-selected="true"
+            className="Select-value-label"
+            id="react-select-3--value-item"
+            role="option"
+          >
+            First Name ⇧
+          </span>
+        </div>
+        <div
+          className="Select-input"
+          style={
+            Object {
+              "display": "inline-block",
+            }
+          }
+        >
+          <input
+            aria-activedescendant="react-select-3--value"
+            aria-expanded="false"
+            aria-haspopup="false"
+            aria-owns=""
+            id="sortby-dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            role="combobox"
+            style={
+              Object {
+                "boxSizing": "content-box",
+                "width": "5px",
+              }
+            }
+            value=""
+          />
+          <div
+            style={
+              Object {
+                "height": 0,
+                "left": 0,
+                "overflow": "scroll",
+                "position": "absolute",
+                "top": 0,
+                "visibility": "hidden",
+                "whiteSpace": "pre",
+              }
+            }
+          />
+        </div>
+      </span>
+      <span
+        aria-label="Clear value"
+        className="Select-clear-zone"
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        title="Clear value"
+      >
+        <span
+          className="Select-clear"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "&times;",
+            }
+          }
+        />
+      </span>
+      <span
+        className="Select-arrow-zone"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="Select-arrow"
+          onMouseDown={[Function]}
+        />
+      </span>
+    </div>
+  </div>
 </div>
 `;

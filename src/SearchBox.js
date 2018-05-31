@@ -25,21 +25,32 @@ class SearchBox extends Component {
 
     return (
       <div className='SearchBox'>
-        <input
-          id='name-input'
-          type='text'
-          defaultValue={this.props.customerName}
-          onChange={this.props.handleUpdateName} />
-        <Select
-          inputProps={{id: 'company-dropdown'}}
-          options={options}
-          onChange={this.props.handleUpdateCompany}
-          value={this.props.companyName} />
-        <Select
-          inputProps={{id: 'sortby-dropdown'}}
-          options={this.props.sortByOptions}
-          onChange={this.props.handleUpdateSortBy}
-          value={this.props.sortBy} />
+        <div className='form-group'>
+          <h4>Search Options</h4>
+          <div className='row margin-5p'>
+            <p className='form-control'>Filter by Name</p>
+            <input
+              id='name-input'
+              type='text'
+              className='form-control'
+              defaultValue={this.props.customerName}
+              onChange={this.props.handleUpdateName} />
+          </div>
+          <div className='row margin-5p'>
+            <Select
+              inputProps={{id: 'company-dropdown'}}
+              className='select-margin-top'
+              options={options}
+              onChange={this.props.handleUpdateCompany}
+              value={this.props.companyName} />
+            <Select
+              inputProps={{id: 'sortby-dropdown'}}
+              className='select-margin-top'
+              options={this.props.sortByOptions}
+              onChange={this.props.handleUpdateSortBy}
+              value={this.props.sortBy} />
+          </div>
+        </div>
       </div>
     )
   }

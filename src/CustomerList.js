@@ -7,22 +7,18 @@ class CustomerList extends Component {
   render () {
     return (
       <div className='CustomerList'>
-        <table>
-          <tbody>
+        <table className='table table-striped text-left'>
+          <thead>
             <tr>
-              <td>ID</td>
               <td>First Name</td>
               <td>Last Name</td>
               <td>Company</td>
             </tr>
-          </tbody>
-        </table>
-        <table>
+          </thead>
           <tbody>
             {this.props.customers.map((cust, idx) => {
               return (
                 <tr key={idx}>
-                  <td>{cust.id}</td>
                   <td>{cust.first_name}</td>
                   <td>{cust.last_name}</td>
                   <td>{cust.company_name}</td>

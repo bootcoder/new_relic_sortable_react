@@ -81,16 +81,24 @@ class App extends Component {
           <img src={logo} className='App-logo' alt='logo' />
           <h1 className='App-title'>Welcome to React</h1>
         </header>
-        <SearchBox
-          customerName={this.state.customerName}
-          companyName={this.state.companyName}
-          companies={this.state.companies}
-          sortBy={this.state.sortBy}
-          sortByOptions={this.state.sortByOptions}
-          handleUpdateName={this.handleUpdateName}
-          handleUpdateCompany={this.handleUpdateCompany}
-          handleUpdateSortBy={this.handleUpdateSortBy} />
-        <CustomerList customers={this.state.customers} />
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-3'>
+              <SearchBox
+                customerName={this.state.customerName}
+                companyName={this.state.companyName}
+                companies={this.state.companies}
+                sortBy={this.state.sortBy}
+                sortByOptions={this.state.sortByOptions}
+                handleUpdateName={this.handleUpdateName}
+                handleUpdateCompany={this.handleUpdateCompany}
+                handleUpdateSortBy={this.handleUpdateSortBy} />
+            </div>
+            <div className='col-md-9 well'>
+              <CustomerList customers={this.state.customers} />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

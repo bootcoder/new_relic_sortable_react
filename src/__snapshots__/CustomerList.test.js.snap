@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CustomerList /> renders without crashing 1`] = `
+<div
+  className="CustomerList"
+>
+  <table
+    className="table table-striped text-left"
+  >
+    <thead>
+      <tr>
+        <td>
+          First Name
+        </td>
+        <td>
+          Last Name
+        </td>
+        <td>
+          Company
+        </td>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;

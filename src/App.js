@@ -136,8 +136,8 @@ class App extends Component {
         <footer>
           <ul className='list-inline'>
             <li className='text-white'>Presented by <a href='https://bootcoder.net'>BootCoder</a></li>|
-            <li className='text-white'><a href='https://github.com/bootcoder/new_relic_sortable_api'>Rails Repo</a></li>|
-            <li className='text-white'><a href='https://github.com/bootcoder/new_relic_sortable_react'>React Repo</a></li>
+            <li className='text-white'><a href='https://github.com/bootcoder/new_relic_sortable_api/tree/sorting'>Rails Repo</a></li>|
+            <li className='text-white'><a href='https://github.com/bootcoder/new_relic_sortable_react/tree/search'>React Repo</a></li>
           </ul>
         </footer>
       </div>

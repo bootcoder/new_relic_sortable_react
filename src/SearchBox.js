@@ -10,9 +10,8 @@ class SearchBox extends Component {
     return (
       <div className='SearchBox well'>
         <div className='form-group'>
-          <h4>Filter Options</h4>
           <div className='row margin-5p'>
-            <p className='form-control info-box'>Input Name / Dropdown Sorting</p>
+            <p className='form-control info-box'>Filter Name / Dropdown Sort</p>
             <input
               id='name-input'
               type='text'

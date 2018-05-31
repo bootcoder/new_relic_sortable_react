@@ -25,8 +25,8 @@ Built with Create-React-App ```1.4.3``` and Node ```9.3.0```
 
 The complete app is deployed to Heroku on a standard dyno.
 
-- [Application](https://bootcoder-relic-search.herokuapp.com/)
-- [Rails API](https://bootcoder-relic-search-api.herokuapp.com/)
+- [Application](https://bootcoder-relic-search.herokuapp.com)
+- [Rails API](https://bootcoder-relic-search-api.herokuapp.com)
 
 #### PR's
 
@@ -81,3 +81,9 @@ Style and design are very important to me, but it can also be a huge time suck w
 I've taken a bit of artistic license with the layouts suggested in the challenge.
 Ex: 'sort by located at the top right of the customer list'.
 Instead I opted for what I view as a cleaner approach locating all filter options within their on widget area. This is more in keeping with the modular component approach React promotes.
+
+#### Git
+
+**Commits** I ordinarily have a stronger commit log. Due to scheduling things my workflow for this app was more stop and start so clean commits were harder to come by.
+
+**Branching** Given an app of this size I did not see the need for more than one feature branch off master.

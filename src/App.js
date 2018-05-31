@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import logo from './logo.png'
 import SearchBox from './SearchBox'
 import CustomerList from './CustomerList'
 import fetchHelper from './request'
@@ -113,7 +113,7 @@ class App extends Component {
       <div className='App'>
         <header className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
-          <h1 className='App-title'>Welcome to React</h1>
+          <h1 className='App-title'>Customer Search Tool</h1>
         </header>
         <div className='container'>
           <div className='row'>
@@ -133,6 +133,13 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <footer>
+          <ul className='list-inline'>
+            <li className='text-white'>Presented by <a href='https://github.com/bootcoder'>BootCoder</a></li>|
+            <li className='text-white'><a href='https://github.com/bootcoder'>Rails Repo</a></li>|
+            <li className='text-white'><a href='https://github.com/bootcoder'>React Repo</a></li>
+          </ul>
+        </footer>
       </div>
     )
   }

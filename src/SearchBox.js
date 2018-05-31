@@ -15,6 +15,7 @@ class SearchBox extends Component {
     let options = [{ value: 'all', label: 'All Companies' }]
     this.props.companies.map((comp) => {
       options.push({value: comp, label: comp})
+      return comp
     })
     return options
   }

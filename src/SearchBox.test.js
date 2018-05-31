@@ -17,6 +17,7 @@ describe('<SearchBox />', () => {
         customerName='Fred'
         companies={['Titos', 'Wendys']}
         sortBy={{value: 'first_name_ascn', label: 'First Name ⇧'}}
+        sortByOptions={[{value: 'first_name_ascn', label: 'First Name ⇧'}]}
         handleUpdateName={nameSpy}
         handleUpdateCompany={companySpy}
         handleUpdateSortBy={sortSpy} />)

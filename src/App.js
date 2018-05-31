@@ -1,7 +1,7 @@
-/* global fetch */
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import SearchBox from './SearchBox'
+import fetchHelper from './request'
 import './App.css'
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
       customers: [],
       customerName: '',
       companyName: {value: 'All Companies', label: 'All Companies'},
-      companies: ['test'],
+      companies: [],
       sortBy: {value: 'last_name_ascn', label: 'Last Name ⇧'},
       sortByOptions: [
         {value: 'first_name_ascn', label: 'First Name ⇧'},
@@ -35,11 +35,7 @@ class App extends Component {
   }
 
   async fetchCustomerList () {
-    const sortBy = `sort_by=${this.state.sortBy.value}`
-    const name = `name=${this.state.customerName}`
-    const company = `company=${this.state.companyName.value}`
-    const response = await fetch(`http://localhost:3000/customers?${sortBy}&${name}&${company}`)
-    const json = await response.json()
+    const json = await fetchHelper(this.state)
     this.setState({
       companies: json.companies,
       customers: json.customers,
@@ -53,11 +49,12 @@ class App extends Component {
     // NOTE: I like to include a basic catch ahead of iteration when I can.
     if (sortParam === undefined) { return this.state.sortBy }
     let result
-    // LOOP through sortOptions - return the obj which matches input
+    // LOOP through sortOptions - set result when obj matches input
     this.state.sortByOptions.map((opt) => {
       if (opt.value === sortParam) { result = opt }
+      return opt
     })
-    // IF no option is found with the given input return the existing state.
+    // IF no option is found return the existing state.
     return result ? result : this.state.sortBy
   }
 

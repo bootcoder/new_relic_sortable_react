@@ -4,12 +4,11 @@ exports[`<CustomerList /> renders without crashing 1`] = `
 <div
   className="CustomerList"
 >
-  <table>
-    <tbody>
+  <table
+    className="table table-striped text-left"
+  >
+    <thead>
       <tr>
-        <td>
-          ID
-        </td>
         <td>
           First Name
         </td>
@@ -20,9 +19,7 @@ exports[`<CustomerList /> renders without crashing 1`] = `
           Company
         </td>
       </tr>
-    </tbody>
-  </table>
-  <table>
+    </thead>
     <tbody />
   </table>
 </div>

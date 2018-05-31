@@ -7,16 +7,13 @@ exports[`<SearchBox /> renders without crashing 1`] = `
   <div
     className="form-group"
   >
-    <h4>
-      Filter Options
-    </h4>
     <div
       className="row margin-5p"
     >
       <p
         className="form-control info-box"
       >
-        Input Name / Dropdown Sorting
+        Filter Name / Dropdown Sort
       </p>
       <input
         className="form-control"

@@ -1,3 +1,15 @@
+### Deployment
+
+The complete app is deployed to Heroku on a standard dyno.
+
+- [Application](https://bootcoder-relic-search.herokuapp.com)
+- [Rails API](https://bootcoder-relic-search-api.herokuapp.com) if you're into raw JSON...
+
+### PR's
+
+- [React](https://github.com/bootcoder/new_relic_sortable_react/pull/1)
+- [Rails API](https://github.com/bootcoder/new_relic_sortable_api/pull/1)
+
 ## Instalation:
 
 #### API
@@ -21,21 +33,9 @@ Built with Create-React-App ```1.4.3``` and Node ```9.3.0```
 - ```$ yarn start```
 - ```$ yarn test``` to run specs
 
-#### Deployment
-
-The complete app is deployed to Heroku on a standard dyno.
-
-- [Application](https://bootcoder-relic-search.herokuapp.com)
-- [Rails API](https://bootcoder-relic-search-api.herokuapp.com)
-
-#### PR's
-
-- [React](https://github.com/bootcoder/new_relic_sortable_react/pull/1)
-- [Rails API](https://github.com/bootcoder/new_relic_sortable_api/pull/1)
-
 ## Development Notes:
 
-#### General philosophy
+### General philosophy
 
 Right off I will say that I have commented in both code bases just for you.
 Grep for 'NOTE:' to find them. Other comments are my normal style.
@@ -47,13 +47,13 @@ This bare-bones MVP approach is more contrived than my usual approach as I feel 
 
 Ex1: Instead of implementing a more conventional react-router approach, I choose to handle the URL using vanilla patterns alone.
 
-#### Complexity
+### Complexity
 
 I would note that in real life the sorting and filtering of such a feature should be handled by the frontend to the greatest extent possible. However I recognize the point of the challenge is to garner insight into my abilities to work in a decoupled dependent structure. Given these constraints I have done what I can to increase the response time of the server by eliminating ```n+1``` queries and ensuring the most intensive queries are constructed in raw SQL.
 
-#### Structure
+### Structure
 
-##### FrontEnd
+#### FrontEnd
 
 I decided on a overarching smart component (App) with (mostly) dumb children (CustomerList, SearchBox). In hind site the CustomerList would have been a stateless functional component but that's okay if we decide to beef it up at a later date we'll already have the structure in place to do so.
 
@@ -67,7 +67,7 @@ I readily admit that the frontend testing could be more thorough.
 
 **Sorting** - Side note: Sorting via dropdown would not have been my first choice. There are several out of the box solutions available for super simple table sorting via headers, a more intuitive solution for the end user.
 
-##### Backend
+#### Backend
 
 **DB Lookups** - I choose to go with Ruby/AR first for sorting as opposed to more complex SQL queries for the majority of lookups. This should demonstrate a healthy balance in my ability to query the DB. Also I made sure to serialize the JSON payload down to clear needs only, presenting a much cleaner backend product.
 
@@ -82,7 +82,7 @@ I've taken a bit of artistic license with the layouts suggested in the challenge
 Ex: 'sort by located at the top right of the customer list'.
 Instead I opted for what I view as a cleaner approach locating all filter options within their on widget area. This is more in keeping with the modular component approach React promotes.
 
-#### Git
+### Git
 
 **Commits** I ordinarily have a stronger commit log. Due to scheduling things my workflow for this app was more stop and start so clean commits were harder to come by.
 

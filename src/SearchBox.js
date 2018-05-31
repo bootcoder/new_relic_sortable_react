@@ -21,13 +21,6 @@ class SearchBox extends Component {
 
   render () {
     const options = this.buildCompanyOptions()
-    const sortByOptions = [
-      {value: 'first_name_ascn', label: 'First Name ⇧'},
-      {value: 'first_name_desc', label: 'First Name ⇩'},
-      {value: 'last_name_ascn', label: 'Last Name ⇧'},
-      {value: 'last_name_desc', label: 'Last Name ⇩'},
-      {value: 'company_name_ascn', label: 'Company  ⇧'},
-      {value: 'company_name_desc', label: 'Company  ⇩'}]
 
     return (
       <div className='SearchBox'>
@@ -43,7 +36,7 @@ class SearchBox extends Component {
           value={this.props.companyName} />
         <Select
           inputProps={{id: 'sortby-dropdown'}}
-          options={sortByOptions}
+          options={this.props.sortByOptions}
           onChange={this.props.handleUpdateSortBy}
           value={this.props.sortBy} />
       </div>
@@ -56,6 +49,7 @@ SearchBox.propTypes = {
   companyName: PropTypes.object.isRequired,
   companies: PropTypes.array.isRequired,
   sortBy: PropTypes.object.isRequired,
+  sortByOptions: PropTypes.array.isRequired,
   handleUpdateName: PropTypes.func.isRequired,
   handleUpdateCompany: PropTypes.func.isRequired,
   handleUpdateSortBy: PropTypes.func.isRequired
